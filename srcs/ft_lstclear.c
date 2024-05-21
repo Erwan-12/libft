@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 18:00:36 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/21 14:41:02 by erwfonta         ###   ########.fr       */
+/*   Created: 2024/05/21 16:47:23 by erwfonta          #+#    #+#             */
+/*   Updated: 2024/05/21 17:23:09 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	return (c >= 0 && c <= 127);
+	t_list *tmp_lst;
+
+	if (lst != NULL)
+	{
+		while (*lst != NULL)
+		{
+			tmp_lst = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = tmp_lst;
+		}
+	}
 }

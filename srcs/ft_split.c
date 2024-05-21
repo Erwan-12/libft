@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:36:43 by rsk               #+#    #+#             */
-/*   Updated: 2024/04/23 15:12:39 by rsk              ###   ########.fr       */
+/*   Updated: 2024/05/21 11:52:44 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ static size_t	get_wordlen(const char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	
 }

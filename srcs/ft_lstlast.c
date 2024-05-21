@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 18:00:36 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/21 14:41:02 by erwfonta         ###   ########.fr       */
+/*   Created: 2024/05/21 15:44:37 by erwfonta          #+#    #+#             */
+/*   Updated: 2024/05/21 16:30:35 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (c >= 0 && c <= 127);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 14:39:58 by rsk               #+#    #+#             */
-/*   Updated: 2024/03/25 21:50:48 by rsk              ###   ########.fr       */
+/*   Updated: 2024/05/21 14:43:22 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -22,12 +21,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
-/*
-int	main(void)
-{
-	printf("le vrai est : %ld \n", strlen("prout"));
-	printf("le faux est : %ld \n", ft_strlen("prout"));
-	printf("le vrai est : %ld \n", strlen(""));
-	printf("le faux est : %ld \n", ft_strlen(""));
-}*/

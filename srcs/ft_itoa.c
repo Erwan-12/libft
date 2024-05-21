@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:07:36 by rsk               #+#    #+#             */
-/*   Updated: 2024/03/27 23:21:48 by rsk              ###   ########.fr       */
+/*   Updated: 2024/05/21 14:41:28 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ctype.h"
-# include "stddef.h"
-# include "stdio.h"
-# include "unistd.h"
-# include "string.h"
-# include "stdlib.h"
+#include "libft.h"
 
 static int	len_itoa(long nbr)
 {
@@ -73,11 +68,4 @@ char	*ft_itoa(int n)
 		result[0] = '-';
 	result[len] = 0;
 	return (result);
-}
-
-int	main(void)
-{
-	printf("the fake is : %s \n",ft_itoa(-2147483648));
-	printf("the fake is : %s",ft_itoa(1264));
-	return (0);
 }

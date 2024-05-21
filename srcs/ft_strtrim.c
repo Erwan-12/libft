@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 23:58:12 by rsk               #+#    #+#             */
-/*   Updated: 2024/03/29 16:35:59 by rsk              ###   ########.fr       */
+/*   Updated: 2024/05/21 14:43:56 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ctype.h"
-#include "stddef.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-#include "unistd.h"
+#include "libft.h"
 
 static size_t	ft_strlen(const char *str)
 {
@@ -63,11 +58,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str[i++] = s1[start++];
 	}
 	return (str);
-}
-
-int	main(void)
-{
-	char *str = "ababaaaMy name is Simonbbaaabbad";
-	char *set = "ab";
-	printf("this is mine : %s", ft_strtrim(str, set));
 }

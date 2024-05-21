@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 18:00:36 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/21 14:41:02 by erwfonta         ###   ########.fr       */
+/*   Created: 2024/05/21 16:08:07 by erwfonta          #+#    #+#             */
+/*   Updated: 2024/05/21 16:31:09 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <libft.h>
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	return (c >= 0 && c <= 127);
+	t_list	*last;
+
+	if (*lst != NULL)
+	{
+		last = ft_lstlast(lst);
+		last->next = new;
+	}
+	else
+		*lst = new;
 }
