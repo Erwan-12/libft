@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 18:04:10 by rsk               #+#    #+#             */
-/*   Updated: 2024/03/27 15:05:32 by rsk              ###   ########.fr       */
+/*   Created: 2024/03/27 23:28:01 by rsk               #+#    #+#             */
+/*   Updated: 2024/04/23 15:05:28 by rsk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
+	char	*str;
+	size_t	i;
 
-	str = malloc(size * count);
-	if (!str)
-	{
+	if (!s)
 		return (NULL);
-	}
-	while (i < count)
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (i < len)
 	{
-		str[i++] = 'p';
+		str[i] = s[start + i];
+		i++;
 	}
 	return (str);
 }
