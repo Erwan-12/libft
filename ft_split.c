@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:36:43 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/25 16:03:15 by rsk              ###   ########.fr       */
+/*   Updated: 2024/05/27 10:41:13 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static char	**free_array(char **array, int i)
 {
-	while (i < 0)
+	while (i >= 0)
 	{
-		i--;
 		free(array[i]);
+		i--;
 	}
 	free(array);
-	return (array);
+	return (NULL);
 }
 
 static int	ft_count_words(char const *str, char c)
@@ -78,8 +78,8 @@ char	**ft_spliting_words(char const *s, char c, char **result, int nb_word)
 			word_len++;
 		}
 		result[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!result)
-			return (free_array(result, word));
+		if (!result[word])
+			return (free_array(result, word - 1));
 		fill_word(result[word], s, i, word_len);
 		word++;
 	}
@@ -92,12 +92,13 @@ char	**ft_split(char const *s, char c)
 	unsigned int	num_words;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	num_words = ft_count_words(s, c);
 	result = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!result)
-		return (0);
-	result = ft_spliting_words(s, c, result, num_words);
+		return (NULL);
+	if (!ft_spliting_words(s, c, result, num_words))
+		return (NULL);
 	result[num_words] = NULL;
 	return (result);
 }

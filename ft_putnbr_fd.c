@@ -6,7 +6,7 @@
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:42:40 by erwfonta          #+#    #+#             */
-/*   Updated: 2024/05/21 14:42:42 by erwfonta         ###   ########.fr       */
+/*   Updated: 2024/05/27 10:02:50 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char digit;
+	char	digit;
 
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);

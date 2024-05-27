@@ -6,7 +6,7 @@
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 18:04:10 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/21 11:51:26 by erwfonta         ###   ########.fr       */
+/*   Updated: 2024/05/27 10:19:25 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t			i;
-	unsigned char	*str;
+	void	*str;
 
-	str = malloc(size * count);
+	str = malloc(count * size);
 	if (!str)
 	{
 		return (NULL);
 	}
-	while (i < count)
-	{
-		str[i++] = 'p';
-	}
+	ft_memset(str, 0, count * size);
 	return (str);
 }
