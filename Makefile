@@ -76,6 +76,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-rebonus : fclean bonus
-
 re: fclean all
