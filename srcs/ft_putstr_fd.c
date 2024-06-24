@@ -6,7 +6,7 @@
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:42:44 by erwfonta          #+#    #+#             */
-/*   Updated: 2024/05/21 14:42:50 by erwfonta         ###   ########.fr       */
+/*   Updated: 2024/05/27 10:05:11 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
+
+	i = 0;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);

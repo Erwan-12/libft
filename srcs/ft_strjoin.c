@@ -6,7 +6,7 @@
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 23:43:16 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/21 11:52:52 by erwfonta         ###   ########.fr       */
+/*   Updated: 2024/05/27 10:24:38 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	j;
 
 	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!str)
+	{
+		return (NULL);
+	}
 	i = 0;
 	j = 0;
 	while (s1[i])

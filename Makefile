@@ -3,7 +3,12 @@ NAME = libft.a
 # Compilation
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iincludes
+
+# Directories
+SRCDIR = srcs
+INCDIR = includes
+
 
 # Source files
 SRCS = 	ft_atoi.c \
@@ -39,24 +44,19 @@ SRCS = 	ft_atoi.c \
 		ft_strtrim.c \
 		ft_substr.c \
 		ft_tolower.c \
-		ft_toupper.c
-
-# Bonus Files
-SRCS_B =	ft_lstadd_back.c \
-			ft_lstadd_front.c \
-			ft_lstclear.c \
-			ft_lstdelone.c \
-			ft_lstiter.c \
-			ft_lstlast.c\
-			ft_lstmap.c \
-			ft_lstnew.c \
-			ft_lstsize.c 
+		ft_toupper.c \
+		ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c\
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c 
 
 # Object files
-OBJS = $(SRCS:.c=.o)
-
-# Object bonus 
-OBJS_B = $(SRCS_B:.c=.o)
+OBJS = $(addprefix $(SRCDIR)/,$(SRCS:.c=.o))
 
 # Archives
 AR = ar rc 
@@ -67,11 +67,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-.c.o: 
-	$(CC) $(CFLAGS) -c -include libft.h $< -o ${<:.c=.o}
-
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $(OBJS_B)
+$(SRCDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 	
 clean:
 	rm -rf ${OBJS} ${OBJS_B}
