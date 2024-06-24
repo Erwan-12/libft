@@ -9,7 +9,6 @@ CFLAGS = -Wall -Wextra -Werror -Iincludes
 SRCDIR = srcs
 INCDIR = includes
 
-
 # Source files
 SRCS = 	ft_atoi.c \
 		ft_bzero.c \
@@ -53,7 +52,9 @@ SRCS = 	ft_atoi.c \
 		ft_lstlast.c\
 		ft_lstmap.c \
 		ft_lstnew.c \
-		ft_lstsize.c 
+		ft_lstsize.c \
+		ft_printf.c \
+		ft_printf_utils.c
 
 # Object files
 OBJS = $(addprefix $(SRCDIR)/,$(SRCS:.c=.o))

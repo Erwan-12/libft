@@ -6,13 +6,14 @@
 /*   By: erwfonta <erwfonta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:35:25 by rsk               #+#    #+#             */
-/*   Updated: 2024/05/27 10:26:29 by erwfonta         ###   ########.fr       */
+/*   Updated: 2024/06/24 15:53:55 by erwfonta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf.h"
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdio.h>
